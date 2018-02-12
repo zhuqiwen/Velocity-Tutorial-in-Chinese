@@ -4,6 +4,8 @@ By Wing Ming Chan
 
 ## 致谢
 
+这是这个教程的第二版，其中包含了很多来自German Drulyk的有趣想法。如果有人想对Mr. Wing Ming Chan说谢谢，请不要忘了German Drulyk。
+
 ## 简介
 
 有很多人认为Casvade Velocity挺简单。那么试试下列的任务，看看你能完成几个？这些任务都可以用纯Velocity代码完成，按照由易到难排列。
@@ -38,9 +40,18 @@ By Wing Ming Chan
 28. 实现one-region template master-site design
 29. 实现multiple-design master site
 
-## 教程
+## 课程
+
+目前，Mr. Wing Ming Chan编排了2个Velocity课程。通过这2个课程，我们可以学到如何用Velocity来完成大部分上述任务。
+
+* 初级课程
+* 中级课程
+
+Mr. Wing Ming Chan正在制作第3门课程。这门课将教会我们如何实现Standard Model。
 
 ## 练习
+
+这个教程还包括了一些相关练习。有简单的，也有难的。Have fun！
 
 
 

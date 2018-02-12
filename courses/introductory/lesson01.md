@@ -1,7 +1,3 @@
----
-typora-copy-images-to: ../../../../Desktop/Screen Shot 2018-02-09 at 4.22.51 PM.png
----
-
 # Lession 1: 环境设置
 
 ## 学习目标
@@ -14,7 +10,7 @@ typora-copy-images-to: ../../../../Desktop/Screen Shot 2018-02-09 at 4.22.51 PM.
 * 在format里使用`#import`导入可复用的代码
 * 安装某个library
 
-===============
+-----------------
 
 ### 环境设置
 
@@ -38,6 +34,11 @@ typora-copy-images-to: ../../../../Desktop/Screen Shot 2018-02-09 at 4.22.51 PM.
 
 ### 第一个format
 
-1. 在formats文件夹里创建一个format，并命名为`hello-world`
+1. 在formats文件夹里创建一个format，并命名为`hello-world`，不要写入任何内容。
+
+2. 试着submit这个空白的format，我们会发现：
+
+   * Cascade 不允许提交完全空白的format
+   * 如果要提交format，Cascade要求其中至少包含任意一个字符
 
    ​
