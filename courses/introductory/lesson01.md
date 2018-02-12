@@ -209,3 +209,95 @@
 8. Velocity是基于Java的。
 
 9. （因此），Velocity代码是大小写敏感的。
+
+### 在字符串里对引号做转义
+
+1. 字符串要么用一对单引号要么用一对双引号包裹。
+
+2. 这一对单引号或双引号，是代码的一部分，不是字符串的一部分。
+
+3. 在字符串内部，可以使用引号。
+
+4. 一对单引号内部的单引号，必须被转义。
+
+   * 用两个连续的单引号来转义：`''`转义的是第二个单引号。
+
+5. 一对双引号内部的双引号，必须被转义。
+
+   * 用两个连续的双引号来转义：`""`转义的是第二个双引号。
+
+6. 例子：
+
+   ````velocity
+   ## single quotes within double quotes are OK
+   #set($str1 = "Pete's code")
+
+   ## double quotes within single quotes are OK
+   #set($str1 = 'What do you mean by "simple"?')
+
+   ## to escape single quotes within single quotes
+   #set($str1 = 'Pete''s code')
+
+   ## to escape double quotes within double quotes
+   #set($str1 = 'what do you mean by ""simple""?')
+   ````
+
+### 获取XML数据
+
+1. script format的一个用途就是格式化显示block里的数据。
+2. 一个block可以是：
+   * 一个index block
+   * 一个data definition block
+   * 一个XML block
+   * 一个feed block
+3. Text blocks不需要formats。
+4. block总是应该和format成对地关联到同一个page region上。
+5. Faked data：只需要将相应的数据放在一个XML block里；index block里的数据也可以被copy到XML block里。
+6. faked data对测试非常有用：我们可以自己写一些数据，或者从index block里拷贝一些复杂的nodes然后简化一下，或者直接写一个element来触发format里的可执行代码。
+
+### 安装一个库
+
+1. 使用`#import`指令来导入可复用的代码。
+
+2. UPState提供了一个可复用的[Velocity library][https://github.com/wingmingchan/velocity/tree/master/library]
+
+3. 可以[`Clone or download`][https://github.com/wingmingchan/velocity]整个velocity库。
+
+4. 在下载的zip文件里，可以在`library`文件夹里找到这些库文件。
+
+5. 也可以通过（在Github上）查看每个format的代码，拷贝其源文件。
+
+   * 查看代码的时候，确保以`Raw`格式查看，这样才能直接从浏览器里拷贝。
+
+6. 我们应该在Cascade建立一个专门的site来存储可复用的资源。
+
+   1. 首先，假设我们有这样一个专门的site，命名为`_brisk`。
+   2. 在根目录下创建一个文件夹，命名为`core`。
+   3. 在`core`里创建一个文件夹，命名为`library`。
+   4. 在`library`里创建一个文件夹，命名为`velocity`，也可以在这里再创建一个`xslt`文件夹。
+   5. 在`velocity`里创建一个`chanw`文件夹。
+   6. 将需要复用的format库放在`chanw`文件夹里。
+
+7. 为了在我们的本地formats里复用这些库，我们需要导入一个入口库文件，`chanw_library_import`
+
+   1. 在`formats`文件夹里新建一个format，命名为`import-library`。
+
+   2. 在其中写入下列代码：
+
+      ```velocity
+      #import("site://_brisk/core/library/velocity/chanw/chanw_library_import")
+      ```
+
+   3. 如有必要，可以改变site的名称。
+
+8. 点击`Test Format`。
+
+9. 如果所有这些库安装正确，此时在`Transformation result`里应该会显示几个空白行。
+
+10. 然后，继续编辑`import-library` format，加入：
+
+    ```velocity
+    $chawLocalTimeNow
+    ```
+
+11. 如果本机时间（local time）成功显示，则说明这个库已经部署成功。
