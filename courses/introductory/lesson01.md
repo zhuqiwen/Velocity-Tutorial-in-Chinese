@@ -277,7 +277,7 @@
    4. 在`library`里创建一个文件夹，命名为`velocity`，也可以在这里再创建一个`xslt`文件夹。
    5. 在`velocity`里创建一个`chanw`文件夹。
    6. 将需要复用的format库放在`chanw`文件夹里。
-      * `Add Content` —> `file`，然后`choose`这些库文件。
+      * `Add Content` —> `file`，然后`choose`这些库文件（目前为止，这样做仅能上传这些库文件，Cascade 8似乎不能够正确识别这些库文件）。
 
 7. 为了在我们的本地formats里复用这些库，我们需要导入一个入口库文件，`chanw_library_import`
 
