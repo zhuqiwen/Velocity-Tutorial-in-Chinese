@@ -151,7 +151,7 @@
      * 对feed block而言，其根节点名称与关联feed根节点一致
      * 对XML block而言，其根节点名称与其包含的XML根节点一致
      * 如果其中没有根节点，比如一个text block，则其XML内容会被包裹在`<system-xml>`根节点内
-   * `$currentPage`：只想当前page；是一个[`com.hannonhill.cascade.api.adapters.PageAPIAdapter`][http://www.upstate.edu/formats/velocity/api-documentation/com-hannonhill-cascade-api-adapters/page-api-adapter.php]对象
+   * `$currentPage`：只想当前page；是一个`[com.hannonhill.cascade.api.adapters.PageAPIAdapter](http://www.upstate.edu/formats/velocity/api-documentation/com-hannonhill-cascade-api-adapters/page-api-adapter.ph)`对象
    * [`$_DateTool`][]
    * [`$_XPathTool`][]
    * [`$_SerializerTool`][]
